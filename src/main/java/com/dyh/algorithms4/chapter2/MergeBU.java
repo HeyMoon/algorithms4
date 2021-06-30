@@ -21,7 +21,7 @@ public class MergeBU {
 
     }
 
-    private static void merge(Comparable[] a, Comparable[] aux, int low, int mid, int high) {
+    public static void merge(Comparable[] a, Comparable[] aux, int low, int mid, int high) {
         int i = low, j = mid + 1;
         for (int k = low; k <= high; k++) {
             aux[k] = a[k];
@@ -38,6 +38,12 @@ public class MergeBU {
                 a[k] = aux[j++];
             }
         }
+    }
+
+    public static void main(String[] args) {
+        String[] strings = new String[]{"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+        sort(strings);
+        System.out.println(String.join(",", strings));
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * @author: dengyunhui
  * @datetime: 2021/6/30 22:50
- * @description:
+ * @description: 2.2.15 自底向上的有序队列归并排序
  */
 public class E_2_2_15 {
 
