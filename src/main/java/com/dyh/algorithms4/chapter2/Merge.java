@@ -61,4 +61,59 @@ public class Merge {
 
     }
 
+
+    public static int[] indexSort(Comparable[] a) {
+        int[] index = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            index[i] = i;
+        }
+
+        int[] aux = new int[index.length];
+
+        indexSort(a, index, aux, 0, a.length - 1);
+        return index;
+    }
+
+    private static void indexSort(Comparable[] a, int[] index, int[] aux, int low, int high) {
+        if (high <= low) {
+            return;
+        }
+
+        int mid = low + (high - low) / 2;
+        indexSort(a, index, aux, low, mid);
+        indexSort(a, index, aux, mid + 1, high);
+        indexMerge(a, index, aux, low, mid, high);
+    }
+
+    private static void indexMerge(Comparable[] a, int[] index, int[] aux, int low, int mid, int high) {
+        for (int i = low; i <= high; i++) {
+            aux[i] = index[i];
+        }
+
+        int i = low, j = mid + 1;
+        for (int k = low; k <= high; k++) {
+            if (i > mid) {
+                index[k] = aux[j++];
+            } else if (j > high) {
+                index[k] = aux[i++];
+            } else if (Example.less(a[aux[i]], a[aux[j]])) {
+                index[k] = aux[i++];
+            } else {
+                index[k] = aux[j++];
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] a = new String[]{"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+        int[] index = indexSort(a);
+
+        String[] a2 = a.clone();
+        System.out.println("a:" + String.join(",", a));
+        System.out.println("a2:" + String.join(",", a2));
+        for (int i = 0; i < index.length; i++) {
+            assert a[index[i]].equals(a2[i]);
+        }
+    }
+
 }
