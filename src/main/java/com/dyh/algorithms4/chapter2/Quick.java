@@ -21,7 +21,7 @@ public class Quick {
 
         int j = partition(a, low, high);
         sort(a, low, j - 1);
-        sort(a, j, high);
+        sort(a, j + 1, high);
     }
 
     private static int partition(Comparable[] a, int low, int high) {
