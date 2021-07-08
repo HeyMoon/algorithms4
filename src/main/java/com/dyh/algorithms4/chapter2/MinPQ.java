@@ -13,7 +13,7 @@ public class MinPQ<Key extends Comparable<Key>> {
     private int n;                       // number of items on priority queue
 
     public MinPQ(int initCapacity) {
-        pq = (Key[]) new Object[initCapacity + 1];
+        pq = (Key[]) new Comparable[initCapacity + 1];
         n = 0;
     }
 
@@ -60,7 +60,7 @@ public class MinPQ<Key extends Comparable<Key>> {
     // resize the underlying array to have the given capacity
     private void resize(int capacity) {
         assert capacity > n;
-        Key[] temp = (Key[]) new Object[capacity];
+        Key[] temp = (Key[]) new Comparable[capacity];
         for (int i = 1; i <= n; i++) {
             temp[i] = pq[i];
         }
