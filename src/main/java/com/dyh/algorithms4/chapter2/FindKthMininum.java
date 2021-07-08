@@ -5,7 +5,7 @@ import com.dyh.algorithms4.StdRandom;
 /**
  * @author: dengyunhui
  * @datetime: 2021/7/7 21:56
- * @description:
+ * @description: 2.5.6
  */
 public class FindKthMininum {
 
