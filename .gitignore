@@ -50,3 +50,4 @@ bin/*
 /.idea/*
 .dubbo/
 /out
+/data
