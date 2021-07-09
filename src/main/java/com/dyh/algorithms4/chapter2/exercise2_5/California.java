@@ -28,6 +28,10 @@ public class California {
 
     public static List<String> CHARACTER = Arrays.asList("R", "W", "Q", "O", "J", "M", "V", "A", "H", "B", "S", "G", "Z", "X", "N", "T", "C", "I", "E", "K", "U", "P", "D", "Y", "F", "L");
 
+    private static int getIndex(List<String> ch, String first){
+        return 0;
+    }
+
     static class Nominee implements Comparable<Nominee> {
         private String name;
 
@@ -40,8 +44,8 @@ public class California {
 
         @Override
         public int compareTo(Nominee nominee) {
-            int thatIndex = Collections.binarySearch(CHARACTER, nominee.first);
-            int thisIndex = Collections.binarySearch(CHARACTER, this.first);
+            int thatIndex = getIndex(CHARACTER, nominee.first);
+            int thisIndex = getIndex(CHARACTER, this.first);
             if (thisIndex > thatIndex) {
                 return 1;
             } else if (thisIndex < thatIndex) {
