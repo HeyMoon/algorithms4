@@ -1,5 +1,8 @@
 package com.dyh.algorithms4.chapter3;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author: dengyunhui
  * @datetime: 2021/7/9 22:25
@@ -169,8 +172,12 @@ public class BinarySearchBT<Key extends Comparable<Key>, Value> implements ST<Ke
 
     @Override
     public Iterable<Key> keys(Key lo, Key hi) {
-
-        return null;
+        Queue<Key> queue = new LinkedList<>();
+        if (lo.compareTo(hi) > 0) return queue;
+        for (int i = rank(lo); i < rank(hi); i++)
+            queue.add(keys[i]);
+        if (contains(hi)) queue.add(keys[rank(hi)]);
+        return queue;
     }
 
     @Override
