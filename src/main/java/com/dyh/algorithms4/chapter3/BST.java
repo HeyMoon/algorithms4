@@ -68,6 +68,22 @@ public class BST<Key extends Comparable<Key>, Value> implements ST<Key, Value> {
         }
     }
 
+    public Value geNoRecursive(Key key) {
+        Node node = root;
+        while (node != null) {
+            int cmp = key.compareTo(node.key);
+            if (cmp > 0) {
+                node = node.right;
+            } else if (cmp < 0) {
+                node = node.left;
+            } else {
+                return node.value;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public boolean contains(Key key) {
         return get(key) != null;
