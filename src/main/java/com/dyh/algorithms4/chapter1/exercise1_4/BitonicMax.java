@@ -1,7 +1,7 @@
 package com.dyh.algorithms4.chapter1.exercise1_4;
 
-import com.dyh.algorithms4.StdOut;
-import com.dyh.algorithms4.StdRandom;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * 双调数组：如果一个数组中的所有元素是先递增或递减的，则称这个数组为双调

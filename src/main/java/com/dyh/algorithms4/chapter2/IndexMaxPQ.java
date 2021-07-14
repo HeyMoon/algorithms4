@@ -1,7 +1,7 @@
 package com.dyh.algorithms4.chapter2;
 
-import com.dyh.algorithms4.StdOut;
-import com.dyh.algorithms4.StdRandom;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

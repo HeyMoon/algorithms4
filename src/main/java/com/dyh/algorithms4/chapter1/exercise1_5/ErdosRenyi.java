@@ -1,7 +1,7 @@
 package com.dyh.algorithms4.chapter1.exercise1_5;
 
-import com.dyh.algorithms4.StdIn;
-import com.dyh.algorithms4.StdRandom;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 import com.dyh.algorithms4.chapter1.WeightedPathCompressionQuickUnionUF;
 
 /**

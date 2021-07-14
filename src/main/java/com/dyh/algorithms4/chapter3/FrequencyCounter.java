@@ -1,7 +1,7 @@
 package com.dyh.algorithms4.chapter3;
 
-import com.dyh.algorithms4.StdIn;
-import com.dyh.algorithms4.StdOut;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * @author: dengyunhui

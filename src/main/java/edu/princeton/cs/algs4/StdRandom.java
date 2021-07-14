@@ -1,4 +1,4 @@
-package com.dyh.algorithms4;
+package edu.princeton.cs.algs4;
 
 import java.util.Random;
 

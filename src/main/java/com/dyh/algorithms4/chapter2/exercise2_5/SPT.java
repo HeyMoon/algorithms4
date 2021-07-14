@@ -1,7 +1,6 @@
 package com.dyh.algorithms4.chapter2.exercise2_5;
 
-import com.dyh.algorithms4.StdIn;
-import com.dyh.algorithms4.StdOut;
+import edu.princeton.cs.algs4.StdIn;
 
 import java.util.Arrays;
 

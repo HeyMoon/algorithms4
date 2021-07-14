@@ -1,6 +1,6 @@
 package com.dyh.algorithms4.chapter2;
 
-import com.dyh.algorithms4.StdRandom;
+import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * @author: dengyunhui
