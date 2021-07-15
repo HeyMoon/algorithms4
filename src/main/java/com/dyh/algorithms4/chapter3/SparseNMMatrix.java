@@ -6,13 +6,13 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * @author: dengyunhui
  * @datetime: 2021/7/15 01:20
- * @description:
+ * @description: N * M 矩阵
  */
 public class SparseNMMatrix {
 
     private int n;                 // n-by-m matrix
     private int m;
-    private SparseVector[] rows;   // the rows, each row is a sparse vector
+    public SparseVector[] rows;   // the rows, each row is a sparse vector
 
     public SparseNMMatrix(int n, int m) {
         this.n = n;
