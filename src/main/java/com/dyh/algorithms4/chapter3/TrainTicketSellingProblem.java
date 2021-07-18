@@ -8,8 +8,10 @@ import java.util.HashMap;
  * @author: dengyunhui
  * @datetime: 2021/7/15 00:38
  * @description: 用 稀疏矩阵 解决火车票售卖问题
+ * <p>
+ * Solving the train ticket selling problem with sparse matrix
  */
-public class TrainTicketSaleProblem {
+public class TrainTicketSellingProblem {
 
     /**
      * 火车有多个站，我们假设有 N 个座位， M 个站台 (N 远远大于 M)
@@ -45,7 +47,7 @@ public class TrainTicketSaleProblem {
 
     private HashMap<String, Integer> stationsMap;
 
-    public TrainTicketSaleProblem(int n, String[] stations) {
+    public TrainTicketSellingProblem(int n, String[] stations) {
         this.n = n;
         this.m = stations.length;
         this.stationsMap = new HashMap<>(stations.length);
@@ -60,7 +62,7 @@ public class TrainTicketSaleProblem {
      * @param startStation 想买的票的起始站
      * @param endStation   想买的票的终点站
      */
-    private void sale(String startStation, String endStation) {
+    private void sell(String startStation, String endStation) {
         System.out.println("----start: " + startStation + " ,end: " + endStation);
         int startIndex = stationsMap.get(startStation);
         int endIndex = stationsMap.get(endStation);
@@ -96,21 +98,21 @@ public class TrainTicketSaleProblem {
 
     public static void main(String[] args) {
         String[] STATIONS = new String[]{"A", "B", "C", "D", "E", "F", "H", "I"};
-        TrainTicketSaleProblem trainTicketSale = new TrainTicketSaleProblem(10, STATIONS);
-        trainTicketSale.sale("A", "B");
-        trainTicketSale.sale("A", "C");
-        trainTicketSale.sale("A", "D");
-        trainTicketSale.sale("A", "E");
-        trainTicketSale.sale("A", "F");
-        trainTicketSale.sale("A", "H");
-        trainTicketSale.sale("A", "I");
-        trainTicketSale.sale("B", "C");
-        trainTicketSale.sale("B", "D");
-        trainTicketSale.sale("B", "E");
+        TrainTicketSellingProblem trainTicketSale = new TrainTicketSellingProblem(10, STATIONS);
+        trainTicketSale.sell("A", "B");
+        trainTicketSale.sell("A", "C");
+        trainTicketSale.sell("A", "D");
+        trainTicketSale.sell("A", "E");
+        trainTicketSale.sell("A", "F");
+        trainTicketSale.sell("A", "H");
+        trainTicketSale.sell("A", "I");
+        trainTicketSale.sell("B", "C");
+        trainTicketSale.sell("B", "D");
+        trainTicketSale.sell("B", "E");
         //没有票卖了
-        trainTicketSale.sale("B", "F"); // 如果改成 D - F 就有票卖
+        trainTicketSale.sell("B", "F"); // 如果改成 D - F 就有票卖
 
-        trainTicketSale.sale("B", "H");
+        trainTicketSale.sell("B", "H");
     }
 
 }

@@ -1,10 +1,12 @@
 package com.dyh.algorithms4.chapter1.exercise;
 
+import com.dyh.algorithms4.chapter1.Queue;
 import com.dyh.algorithms4.chapter1.ResizingArrayStack;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class QueueWithTwoStack<E> {
+public class QueueWithTwoStack<E> implements Queue<E> {
 
     private ResizingArrayStack stack1;
     private ResizingArrayStack stack2;
@@ -26,8 +28,13 @@ public class QueueWithTwoStack<E> {
         size++;
     }
 
-    private boolean empty() {
+    public boolean isEmpty() {
         return size == 0;
+    }
+
+    @Override
+    public int size() {
+        return size;
     }
 
     /**
@@ -36,12 +43,12 @@ public class QueueWithTwoStack<E> {
      * @return
      */
     public E dequeue() {
-        if (empty()) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
 
-        if (stack2.isEmpty()){
-            while (!stack1.isEmpty()){
+        if (stack2.isEmpty()) {
+            while (!stack1.isEmpty()) {
                 stack2.push(stack1.pop());
             }
         }
@@ -57,10 +64,14 @@ public class QueueWithTwoStack<E> {
         queue.enqueue("2");
         queue.enqueue("3");
         queue.enqueue("4");
-        while (!queue.empty()){
+        while (!queue.isEmpty()) {
             System.out.println(queue.dequeue());
         }
     }
 
 
+    @Override
+    public Iterator<E> iterator() {
+        return null;
+    }
 }
