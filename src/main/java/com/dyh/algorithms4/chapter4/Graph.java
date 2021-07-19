@@ -1,6 +1,8 @@
 package com.dyh.algorithms4.chapter4;
 
 import com.dyh.algorithms4.chapter1.Bag;
+import com.dyh.algorithms4.chapter1.ResizingArrayStack;
+import com.dyh.algorithms4.chapter1.Stack;
 import edu.princeton.cs.algs4.In;
 
 /**
@@ -31,6 +33,36 @@ public class Graph extends AbstractGraph {
             int w = in.readInt();
             addEdge(v, w);
         }
+    }
+
+    public Graph(Graph g) {
+        this.v = g.v;
+        this.e = g.e;
+        adj = new Bag[v];
+        for (int i = 0; i < v; i++) {
+            adj[i] = new Bag<>();
+        }
+
+        for (int i = 0; i < g.v; i++) {
+            Stack<Integer> reverse = new ResizingArrayStack<>();
+
+            for (int w : g.adj(i)) {
+                reverse.push(w);
+            }
+
+            for (int w : reverse) {
+                this.adj[i].add(w);
+            }
+        }
+    }
+
+    public boolean hasEdge(int v, int w) {
+        for (int t : this.adj(v)) {
+            if (t == w) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
