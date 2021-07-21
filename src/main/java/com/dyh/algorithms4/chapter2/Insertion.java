@@ -15,4 +15,14 @@ public class Insertion {
             }
         }
     }
+
+    public static void sort(Comparable[] a, int lo, int hi) {
+        for (int i = lo; i < hi; i++) {
+            for (int j = i; j > 0; j--) {
+                if (Example.less(a[j], a[j - 1])) {
+                    Example.exch(a, j, j - 1);
+                }
+            }
+        }
+    }
 }
