@@ -37,9 +37,72 @@ public class MedianOfTwoSortedArrays {
         }
     }
 
+    public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
+        if (nums1 == null && nums2 == null) {
+            return 0.0;
+        }
+
+        int length = nums1.length + nums2.length;
+        int i1 = 0;
+        int i2 = 0;
+        if (length % 2 == 0) {
+            i1 = length / 2 - 1;
+            i2 = length / 2;
+        } else {
+            i1 = length / 2;
+            i2 = length / 2;
+        }
+
+        int i = 0, j = 0;
+        int index = 0;
+        int[] result = new int[2];
+        while (true) {
+            index = i + j;
+            if (i >= nums1.length) {
+                if (index == i1) {
+                    result[0] = nums2[j];
+                } else if (index == i2) {
+                    result[1] = nums2[j];
+                    break;
+                }
+                j++;
+            } else if (j >= nums2.length) {
+                if (index == i1) {
+                    result[0] = nums1[i];
+                } else if (index == i2) {
+                    result[1] = nums1[i];
+                    break;
+                }
+                i++;
+            } else if (nums1[i] < nums2[j]) {
+                if (index == i1) {
+                    result[0] = nums1[i];
+                } else if (index == i2) {
+                    result[1] = nums1[i];
+                    break;
+                }
+                i++;
+            } else {
+                if (index == i1) {
+                    result[0] = nums2[j];
+                } else if (index == i2) {
+                    result[1] = nums2[j];
+                    break;
+                }
+                j++;
+            }
+
+            if (i >= nums1.length && j >= nums2.length) {
+                break;
+            }
+        }
+
+        return length % 2 == 0 ? (result[0] + result[1]) / 2.0 : result[0];
+    }
+
     public static void main(String[] args) {
         MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
-        double median = medianOfTwoSortedArrays.findMedianSortedArrays(new int[]{0, 0}, new int[]{0, 0});
+        double median = medianOfTwoSortedArrays.findMedianSortedArrays2(new int[]{1, 3}, new int[]{2});
         System.out.println(median);
     }
 }
