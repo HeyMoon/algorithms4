@@ -49,8 +49,8 @@ public class BitonicMax {
 
             if (a[mid + 1] > a[mid]) {
                 low = mid + 1;
-            } else if (a[mid - 1] > a[mid]) {
-                high = mid - 1;
+            } else if (a[mid + 1] < a[mid]) {
+                high = mid;
             } else {
                 return mid;
             }
